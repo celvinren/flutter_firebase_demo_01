@@ -8,17 +8,25 @@ dependencies:
     flutter:
         sdk: flutter
     cupertino_icons: ^1.0.2
-    stacked: ^1.5.0
+    stacked: ^2.2.7+1
+    stacked_services: ^0.8.16
+    stacked_hooks: ^0.2.1+1    
     responsive_builder: ^0.1.4
-    provider: ^4.1.0
+    provider: ^6.0.0
     logger: ^0.7.0+2
-    get_it: ^3.0.3
+    get_it: ^7.2.0
     equatable: ^1.0.1
     page_transition: ^1.1.5
+    flutter_screenutil: ^5.1.1
+    cloud_firestore: ^3.1.6
+    firebase_core: ^1.11.0
+    firebase_auth: ^3.3.5
+
 dev_dependencies:
     flutter_test:
         sdk: flutter
     flutter_lints: ^1.0.0
+
 flutter:
     uses-material-design: true
 

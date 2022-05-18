@@ -1,3 +1,10 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_firebase_demo_01/app/app.router.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:stacked_services/stacked_services.dart';
+
 import 'core/locator.dart';
 import 'core/providers.dart';
 import 'core/services/navigator_service.dart';
@@ -5,10 +12,14 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:page_transition/page_transition.dart';
 import 'views/splash/splash_view.dart';
-import 'views/main/main_view.dart';
 
 void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   await LocatorInjector.setupLocator();
+  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
+  FirebaseFirestore.instance.settings = const Settings(cacheSizeBytes: Settings.CACHE_SIZE_UNLIMITED);
+
   runApp(MainApplication());
 }
 
@@ -35,45 +46,25 @@ class _MainApplicationState extends State<MainApplication> {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: ProviderInjector.providers,
-      child: MaterialApp(
-        debugShowCheckedModeBanner: false,
-        title: 'App Title',
-        theme: ThemeData(
-          scaffoldBackgroundColor: Color.fromRGBO(240, 240, 240, 1),
-          primaryIconTheme: IconThemeData(color: Colors.white),
-          primaryColorDark: Colors.blue,
-          primarySwatch: Colors.lightBlue,
-          accentColor: Colors.cyanAccent,
-          canvasColor: Color.fromRGBO(86, 194, 255, 1),
-          secondaryHeaderColor: Colors.deepPurpleAccent,
-          fontFamily: 'Raleway',
-          textTheme: ThemeData.light().textTheme.copyWith(
-              bodyText1: TextStyle(color: Color.fromRGBO(20, 51, 51, 1)),
-              bodyText2: TextStyle(color: Color.fromRGBO(20, 51, 51, 1)),
-              caption: TextStyle(
-                color: Colors.black87,
-                fontSize: 16,
-                fontFamily: 'RobotoCondensed',
-                fontWeight: FontWeight.bold,
-              ),
-
-              //Used for item subtitle
-              subtitle1: TextStyle(color: Colors.black54, fontSize: 13, fontFamily: 'RobotoCondensed', height: 1.6),
-
-              //This is used for appbar titles
-              headline6: TextStyle(
-                color: Colors.white,
-                fontSize: 18,
-                fontFamily: 'RobotoCondensed',
-              )),
-        ),
-
-        //This is for firebase analytics trackings
-        // navigatorObservers: <NavigatorObserver>[FirebaseUtility.observer],
-        // navigatorKey: locator<NavigatorService>().navigatorKey,
-
-        home: SplashView(),
-      ),
+      child: ScreenUtilInit(
+          designSize: Size(414, 896),
+          builder: (context, widget) {
+            return MaterialApp(
+              debugShowCheckedModeBanner: false,
+              // navigatorObservers: [locator<FirebaseAnalyticsService>().getObserver],
+              navigatorKey: StackedService.navigatorKey,
+              // theme: AppThemeData.appThemeData(),
+              initialRoute: Routes.mainView,
+              onGenerateRoute: StackedRouter().onGenerateRoute,
+              builder: (context, widget) {
+                // ScreenUtil.setContext(context);
+                return MediaQuery(
+                  data: MediaQuery.of(context).copyWith(textScaleFactor: 1.0),
+                  child: widget,
+                );
+              },
+            );
+          }),
     );
   }
 }

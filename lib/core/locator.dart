@@ -3,7 +3,7 @@ import '../core/services/navigator_service.dart';
 import 'package:get_it/get_it.dart';
 import 'package:logger/logger.dart';
 
-GetIt locator = GetIt.instance;
+final GetIt locator = GetIt.instance;
 
 class LocatorInjector {
   static Logger _log = getLogger('LocatorInjector');
