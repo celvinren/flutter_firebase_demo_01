@@ -8,9 +8,9 @@ dependencies:
     flutter:
         sdk: flutter
     cupertino_icons: ^1.0.2
-    stacked: ^2.2.7+1
-    stacked_services: ^0.8.16
-    stacked_hooks: ^0.2.1+1    
+    stacked: ^2.3.10
+    stacked_services: ^0.8.26
+    stacked_hooks: ^0.2.2
     responsive_builder: ^0.1.4
     provider: ^6.0.0
     logger: ^0.7.0+2

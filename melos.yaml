@@ -1,0 +1,5 @@
+name: flutter_firebase_demo_01
+
+packages:
+  - packages/**
+  - '*'

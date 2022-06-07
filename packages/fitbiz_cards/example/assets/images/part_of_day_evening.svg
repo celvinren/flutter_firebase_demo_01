@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="34.551" height="26.296" viewBox="0 0 34.551 26.296">
+  <g id="Group_6896" data-name="Group 6896" transform="translate(-164.449 -1258.204)">
+    <g id="Group_6902" data-name="Group 6902">
+      <path id="Path_19365" data-name="Path 19365" d="M5.008,2.27H1.29l.869.869a.378.378,0,1,1-.534.534L.111,2.159a.378.378,0,0,1,0-.534L1.625.111a.378.378,0,1,1,.534.534l-.869.869H5.008a.378.378,0,1,1,0,.756Zm0,0" transform="translate(180.084 1263.589) rotate(-90)" fill="#9e9ea5"/>
+      <path id="Subtraction_3" data-name="Subtraction 3" d="M13.839,9H.161A7.878,7.878,0,0,1,0,7.412,7.589,7.589,0,0,1,2.05,2.171a6.728,6.728,0,0,1,9.9,0A7.589,7.589,0,0,1,14,7.412,7.88,7.88,0,0,1,13.839,9Z" transform="translate(175 1273.5)" fill="#9e9ea5"/>
+    </g>
+    <g id="Group_6901" data-name="Group 6901">
+      <line id="Line_74" data-name="Line 74" x2="33.551" transform="translate(164.949 1284)" fill="none" stroke="#9e9ea5" stroke-linecap="round" stroke-width="1"/>
+      <line id="Line_75" data-name="Line 75" y2="3.558" transform="translate(181.978 1267.225)" fill="none" stroke="#9e9ea5" stroke-linecap="round" stroke-width="1"/>
+      <line id="Line_76" data-name="Line 76" x2="3.558" transform="translate(168.508 1280.95)" fill="none" stroke="#9e9ea5" stroke-linecap="round" stroke-width="1"/>
+      <line id="Line_80" data-name="Line 80" x2="3.558" transform="translate(191.934 1280.95)" fill="none" stroke="#9e9ea5" stroke-linecap="round" stroke-width="1"/>
+      <line id="Line_78" data-name="Line 78" y1="2.542" x2="2.542" transform="translate(188.841 1271.8)" fill="none" stroke="#9e9ea5" stroke-linecap="round" stroke-width="1"/>
+      <line id="Line_79" data-name="Line 79" x1="2.542" y1="2.542" transform="translate(172.829 1271.8)" fill="none" stroke="#9e9ea5" stroke-linecap="round" stroke-width="1"/>
+    </g>
+  </g>
+</svg>
